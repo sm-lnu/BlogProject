@@ -4,7 +4,7 @@ This is a simple blog project where users can create, edit, and delete posts.
 
 ## Database Configuration
 
-1. **Create a PostgreSQL database and fill in the connection details in `./DbConfiguration.evn`**
+1. **Create a PostgreSQL database and fill in the connection details in `./DbConfiguration.env`**
 2. **Run the `createTableAndDb.sql` script to create the necessary database and tables**
 
     ```bash
