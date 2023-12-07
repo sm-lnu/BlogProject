@@ -1,0 +1,32 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/nav.ejs') %>
+
+<div class="container mt-4">
+  <div class="info1" style="max-width: 520px; margin: 0 auto; padding: 15px;">
+    <p class="mb-4">
+      Edit Post
+    </p>
+
+    <form action="/post/edit-post/<%= post.id %>" method="POST">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" class="form-control" id="title" name="title" value="<%= post.title %>" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="author" class="form-label">Author:</label>
+        <input type="text" class="form-control" id="author" name="author" value="<%= post.author %>" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required><%= post.description %></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-warning">Save Changes</button>
+      <a href="/post/delete-post/<%= post.id %>" class="btn btn-danger">Delete Post</a>
+    </form>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

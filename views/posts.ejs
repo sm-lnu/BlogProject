@@ -1,0 +1,36 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/nav.ejs') %>
+
+<div class="container mt-4">
+  <div class="info1" style="max-width: 520px; margin: 0 auto; padding: 15px;">
+    <p class="mb-4">
+      Welcome to our blog! Here, you can find interesting posts shared by our community.
+    </p>
+
+    <div class="mb-3">
+      <a href="/add-post" class="btn btn-primary">Create New Post</a>
+    </div>
+    
+    <% if (posts.length) { %>
+      <% posts.forEach(post => { %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><b>Назва:</b> <%= post.title %></h5>
+            <p class="card-text"><b>Автор:</b> <%= post.author %></p>
+            <p class="card-text"><b>Опис:</b> <%= post.description %></p>
+            <div class="btn-group">
+              <a href="/post/edit-post/<%= post.id %>" class="btn btn-warning">Edit</a>
+              <a href="/post/delete-post/<%= post.id %>" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <div class="alert alert-warning" role="alert">
+        No posts available.
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>
