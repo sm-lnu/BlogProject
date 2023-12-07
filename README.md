@@ -4,25 +4,7 @@ This is a simple blog project where users can create, edit, and delete posts.
 
 ## Database Configuration
 
-1. **Create a PostgreSQL database and fill in the connection details in `./db/db.js`**
-
-    ```javascript
-    // db.js
-
-    const { Pool } = require('pg');
-
-    const pool = new Pool({
-        user: "your_username",
-        password: 'your_password',
-        host: "localhost",
-        database: "BlogDB"
-    });
-
-    module.exports = pool;
-    ```
-
-    Replace `"your_username"` and `"your_password"` with your PostgreSQL username and password.
-
+1. **Create a PostgreSQL database and fill in the connection details in `./DbConfiguration.evn`**
 2. **Run the `createTableAndDb.sql` script to create the necessary database and tables**
 
     ```bash
